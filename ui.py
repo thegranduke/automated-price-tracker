@@ -1,5 +1,6 @@
 import streamlit as st
 from utils import is_valid_url
+from scraper import scrape_product
 
 import os
 from database import Database 
@@ -24,6 +25,9 @@ with st.sidebar:
             st.error("Please enter a valid URL")
         else:
             db.add_product(product_url)
+            with st.spinner("Added product to database. Scraping product data..."):
+                product_data = scrape_product(product_url)
+                db.add_price(product_data)
             st.success("Product is now being tracked!")
 
 # Main content
