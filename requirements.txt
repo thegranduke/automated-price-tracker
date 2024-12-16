@@ -1,2 +1,6 @@
 streamlit
 
+firecrawl-py
+pydantica
+python-dotenv
+
