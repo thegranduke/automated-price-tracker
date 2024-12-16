@@ -4,3 +4,6 @@ firecrawl-py
 pydantica
 python-dotenv
 
+psycopg2-binary
+sqlalchemy==2.0.35
+
