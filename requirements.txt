@@ -1,12 +1,9 @@
 streamlit
-
 firecrawl-py
-pydantica
+pydantic
 python-dotenv
-
 psycopg2-binary
 sqlalchemy==2.0.35
-
 pandas
 plotly
 
