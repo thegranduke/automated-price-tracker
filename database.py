@@ -42,10 +42,9 @@ class Database:
         finally:
             session.close()
         
-    def add_price(self, product_data, add_product):
+    def add_price(self, product_data):
         session = self.Session()
         try:
-            add_product(product_data['url'])
 
             price_history = PriceHistory(
                 id=f"{product_data['url']}_{product_data['timestamp']}",
