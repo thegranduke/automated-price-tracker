@@ -28,10 +28,10 @@ with st.sidebar:
         elif not is_valid_url(product_url):
             st.error("Please enter a valid URL")
         else:
-            db.add_product(product_url)
+            db.add_product(product_url.rstrip("/")) # Remove trailing "/" so this url matches the scraped url
             with st.spinner("Added product to database. Scraping product data..."):
                 product_data = scrape_product(product_url)
-                db.add_price(product_data)
+                db.add_price(product_data, db.add_product)
             st.success("Product is now being tracked!")
 
 # Main content
